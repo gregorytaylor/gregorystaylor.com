@@ -55,8 +55,17 @@ navbar
 .navbar-brand-centered a {
 	font-family: "proxima nova", sans-serif;
   	font-weight: medium;
-  	font-size: 1.2em;
+  	font-size: 1em;
   	text-decoration: none !important;
+}
+
+@media (min-width: 768px) {
+	.navbar-brand-centered a {
+		font-family: "proxima nova", sans-serif;
+	  	font-weight: medium;
+	  	font-size: 1.2em;
+	  	text-decoration: none !important;
+	}
 }
 
 .navbar>.container .navbar-brand-centered, 
