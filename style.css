@@ -1,0 +1,310 @@
+body, html {
+ 	height: 100%;
+ }
+
+body {
+	margin-top: 50px;
+	font-family: "usual", sans-serif !important;
+	color: #222e62;
+}
+
+
+/*
+navbar
+*/
+
+.navbar {
+	border-radius: 0px !important;
+	border: none;
+	background-color: #222e62 !important;
+}
+.navbar a {
+	font-family: "usual", sans-serif;
+	color: #ddd !important;
+}
+
+.nav>li>a:first-child {
+	padding-left: 0px !important;
+	padding-right: 30px !important;
+}
+
+.navbar-right {
+	font-size: 1.1em;
+	margin-right: -30px;
+}
+
+.navbar-right>li>a {
+	font-size: 1.1em;
+	padding-left: 45px !important;
+}
+
+.navbar-right>li>a:last-child {
+	margin-right: 0px !important;
+}
+
+.navbar-brand-centered {
+  	color: #ddd !important;
+    position: absolute;
+    left: 50%;
+    display: block;
+    width: 200px;
+    text-align: center;
+    background-color: transparent;
+}
+
+.navbar-brand-centered a {
+	font-family: "proxima nova", sans-serif;
+  	font-weight: medium;
+  	font-size: 1.2em;
+  	text-decoration: none !important;
+}
+
+.navbar>.container .navbar-brand-centered, 
+.navbar>.container-fluid .navbar-brand-centered {
+    margin-left: -100px;
+}
+
+.navbar-toggle {
+	border: none;
+}
+
+.navbar-toggle button {
+	background-color: #222e62;
+}
+
+.navbar-default .navbar-toggle:focus, .navbar-default .navbar-toggle:hover {
+	background-color: #222e62;
+}
+
+.navbar-default .navbar-toggle .icon-bar {
+	background-color: #ddd;
+}
+
+.navbar-default .navbar-nav>.active>a {
+	background-color: #222e62;
+	color: #82edfe !important;
+}
+
+.navbar-nav>.active>a:focus {
+	background-color: #222e62 !important;
+}
+
+.navbar-default .navbar-nav>.active>a:hover {
+	background-color: #222e62 !important;
+}
+
+
+/*
+sections global
+*/
+
+
+
+section h3 {
+	font-family: "proxima nova", sans-serif;
+	font-weight: medium;
+	text-align: center;
+}
+
+
+/*
+home section
+*/
+
+#home {
+	min-height: 40%;
+	background-image: linear-gradient(to bottom, #222e62 120px, #fff 0%);
+    background-size: cover;
+	background-repeat: no-repeat;
+}
+
+#home img {
+	width: 240px;
+	height: 240px;
+}
+
+#headshot {
+	border-radius: 50%;
+}
+
+.contact-links {
+	margin-top: 30px;
+	text-align: center;
+}
+
+.contact-links li:first-child {
+	display: inline;
+	color: #222e62;
+	margin: 20px;
+	margin-left: -20px;
+}
+
+.contact-links li {
+	display: inline;
+	color: #222e62;
+	margin: 20px;
+}
+
+.contact-links a {
+	font-family: "proxima nova", sans-serif;
+	font-size: 1.5em;
+	color: #222e62;
+}
+
+#home p {
+	text-align: center;
+	font-size: 16px !important;
+}
+
+#home .job-titles {
+	text-align: center;
+	font-size: 16px;
+}
+
+.job-titles hr {
+	color: #aaa;
+	max-width: 20em;
+}
+
+.schools {
+	padding-top: 15px;
+	padding-bottom: 30px;
+}
+
+.media-heading {
+	font-weight: 500 !important;
+}
+
+.media-body {
+	padding-top: 10px;
+	padding-bottom: 10px;
+}
+
+.media-left img {
+	height: 50px !important;
+	width: 50px !important;
+}
+
+.home-intro p {
+	text-align: left !important;
+}
+
+/*
+consulting section
+*/
+
+#consulting h2 {
+	font-family: "proxima nova", sans-serif;
+	font-weight: medium;
+	text-align: center;
+	color: #222e62 !important;
+}
+
+
+.clients img {
+	max-height: 100px;
+	max-width: 100px;
+}
+
+.consult-contact button{
+	background-color: #ae891a;
+	color: #fff;
+}
+
+
+/*
+research section
+*/
+
+#research {
+	min-height: 70%;
+	background-color: #eee;
+	color: #222e62;
+}
+
+#research h2 {
+	font-family: "proxima nova", sans-serif;
+	font-weight: medium;
+	text-align: center;
+	color: #222e62 !important;
+}
+
+#research h3 {
+	font-family: "proxima nova", sans-serif;
+	text-align: center;
+	color: #222e62 !important;
+}
+
+.abstract p {
+	padding-left: 3em !important;
+	padding-right: 3em !important;
+	text-align: justify;
+}
+
+.manuscripts p {
+	padding-left: 1.5em;
+	text-indent: -1.5em;
+}
+
+.presentations p {
+    padding-left: 1.5em;
+    text-indent:-1.5em;
+}
+
+/*
+practice section
+*/
+
+#practice {
+	min-height: 100%;
+	background-color: #fff;
+	color: #222e62;
+}
+
+#practice strong {
+	font-weight: 500;
+}
+
+#practice h2 {
+	font-family: "proxima nova", sans-serif;
+	font-weight: medium;
+	text-align: center;
+	color: #222e62 !important;
+}
+
+#practice h3 {
+	font-family: "proxima nova", sans-serif;
+	text-align: center;
+	color: #222e62 !important;
+}
+
+#practice li {
+	color: #222e62;
+}
+
+#work strong {
+	font-weight: 500;
+}
+
+/*
+about section
+*/
+
+#about {
+	min-height: 70%;
+}
+
+
+/*
+footer
+*/
+
+#footer {
+	min-height: 100px;
+	background-color: #222e62;
+}
+
+#footer {
+	color: lightgray;
+	text-align: center;
+}
