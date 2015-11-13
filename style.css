@@ -171,10 +171,6 @@ home section
 	padding-bottom: 30px;
 }
 
-.media-heading {
-	font-weight: 500 !important;
-}
-
 .media-body {
 	padding-top: 10px;
 	padding-bottom: 10px;
@@ -261,10 +257,6 @@ practice section
 	color: #222e62;
 }
 
-#practice strong {
-	font-weight: 500;
-}
-
 #practice h2 {
 	font-family: "proxima nova", sans-serif;
 	font-weight: medium;
@@ -280,10 +272,6 @@ practice section
 
 #practice li {
 	color: #222e62;
-}
-
-#work strong {
-	font-weight: 500;
 }
 
 /*
