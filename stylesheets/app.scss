@@ -1,0 +1,12 @@
+//
+// main stylesheet
+//
+
+// project variables
+@import 'vars';
+
+// bootstrap 4 with flexbox enabled
+@import 'node_modules/bootstrap/scss/bootstrap-flex.scss';
+
+// global styles
+@import 'global';

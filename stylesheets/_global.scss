@@ -1,0 +1,104 @@
+//
+// global styles
+//
+
+html {
+	@include media-breakpoint-up(lg) {
+		font-size: 18px;
+
+	}
+}
+
+//
+// brand styles
+//
+
+.brand {
+	font-family: $font-family-brand;
+}
+
+
+//
+// alignment helpers
+//
+
+.split-text {
+	.inline-left,
+	.inline-right {
+		display: block;
+	}
+
+	.inline-right {
+		font-style: italic;
+	}
+
+	@include media-breakpoint-up(md) {
+		display: flex;
+		justify-content: flex-end;
+
+		.inline-left {
+			margin-right: auto;
+		}
+
+		.inline-right {
+			font-style: normal;
+		}
+	}
+}
+
+//
+// media object
+//
+
+.media {
+	display: flex;
+	align-items: flex-start;
+}
+
+.media-figure {
+	margin-right: 1rem;
+}
+
+.media-body {
+	flex: 1;
+}
+
+
+//
+// sections
+//
+
+section {
+	padding: 1.5rem 0;
+
+	h1,
+	h3 {
+		margin-bottom: 1rem;
+	}
+}
+
+
+
+//
+// education section
+//
+
+article {
+	margin: 0 auto 1rem;
+
+	p {
+		margin-bottom: 4px;
+	}
+}
+
+
+//
+// research section
+//
+
+#research {
+	p {
+		padding-left: 2rem;
+		text-indent: -2rem;
+	}
+}

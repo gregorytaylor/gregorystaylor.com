@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+html(lang="en")
+	include _head.pug
+	body
+		section
+			.container
+				h1.brand Gregory S. Taylor
+		section#education
+			.container
+				h1 Education
+				article
+					.split-text
+						h4.inline-left Harvard University
+						p.inline-right May 2015
+					p
+						em Master of Education magna cum laude
+						| , Special Studies
+					p Emphasis: Inclusive Education Policy and Program Evaluation
+				article
+					.split-text
+						h4.inline-left University of Cincinnati
+						p.inline-right April 2014
+					p
+						em Bachelor of Science cum laude
+						| , Special Education
+					p Concentrations: Natural Science and English Language Arts
+		section#certification
+			.container
+				h1 Certification
+				article.split-text
+					p.inline-left Intervention Specialist Mild/Moderate and Moderate/Intense (K-12)
+					p.inline-right July 2014 - June 2018
+		section#research
+			include _research.pug
+		section
+		include _foot.pug

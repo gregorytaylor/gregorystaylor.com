@@ -1,0 +1,40 @@
+{
+  "name": "gregorytaylor.github.io",
+  "version": "1.0.0",
+  "description": "Gregory Taylor's personal site",
+  "scripts": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/gregorytaylor/gregorytaylor.github.io.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/gregorytaylor/gregorytaylor.github.io/issues"
+  },
+  "homepage": "https://github.com/gregorytaylor/gregorytaylor.github.io#readme",
+  "devDependencies": {
+    "connect-gzip-static": "^1.0.0",
+    "del": "^2.2.2",
+    "express": "^4.14.0",
+    "gulp": "^3.9.1",
+    "gulp-autoprefixer": "^3.1.1",
+    "gulp-clean-css": "^2.0.13",
+    "gulp-if": "^2.0.1",
+    "gulp-imagemin": "^3.0.3",
+    "gulp-plumber": "^1.1.0",
+    "gulp-pug": "^3.1.0",
+    "gulp-purifycss": "^0.2.0",
+    "gulp-sass": "^2.3.2",
+    "gulp-sourcemaps": "^1.6.0",
+    "gulp-util": "^3.0.7",
+    "gulp-watch": "^4.3.10",
+    "imagemin-pngquant": "^5.0.0",
+    "sprity": "^1.0.8"
+  },
+  "dependencies": {
+    "bootstrap": "^4.0.0-alpha.4"
+  }
+}
