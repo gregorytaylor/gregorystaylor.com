@@ -38,6 +38,10 @@ html {
 
 		.inline-left {
 			margin-right: auto;
+
+			em {
+				
+			}
 		}
 
 		.inline-right {
@@ -74,6 +78,33 @@ section {
 	h1,
 	h3 {
 		margin-bottom: 1rem;
+	}
+}
+
+
+
+//
+// awards section
+//
+
+#awards {
+	@include media-breakpoint-down(sm) {
+		.inline-left {
+			display: inline;
+		}
+
+		.inline-right {
+			margin-bottom: 4px;
+			display: inline-block;
+
+			&:before {
+				content: " ("
+			}
+			&:after {
+				content: ")"
+			}
+		}
+
 	}
 }
 

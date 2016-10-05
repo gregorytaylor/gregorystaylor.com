@@ -9,13 +9,13 @@ var sourcemaps = require('gulp-sourcemaps');
 var sass = require('gulp-sass');
 var autoprefixer = require('gulp-autoprefixer');
 var cleanCss = require('gulp-clean-css');
+var purifyCss = require('gulp-purifycss');
 var plumber = require('gulp-plumber');
 var pug = require('gulp-pug');
 var gulpif = require('gulp-if');
 var del = require('del');
 var imagemin = require('gulp-imagemin');
 var imageminPngquant = require('imagemin-pngquant');
-var purify = require('gulp-purifycss');
 
 
 
@@ -64,9 +64,12 @@ gulp.task('styles', function() {
 			remove: false
 		}))
 		.pipe(gutil.env.env === 'dev' ? sourcemaps.write('./maps') : gutil.noop())
-		.pipe(gutil.env.env === 'prod' ? cleanCSS({
-			// compatibility: 'ie8'
+		.pipe(gutil.env.env === 'prod' ? cleanCss({
+			compatibility: 'ie10'
 		}) : gutil.noop())
+		.pipe(gutil.env.env === 'prod' ? purifyCss([
+			'./public/js/index.js',
+			'./public/*.html']) : gutil.noop())
 		.pipe(gulp.dest(paths.styles.dest))
 });
 
@@ -99,6 +102,7 @@ gulp.task('images', function() {
 });
 
 
+
 //
 // sprite
 //
@@ -118,6 +122,18 @@ gulp.task('sprite', function () {
 		quality: '90-95'
 	})]))
 	.pipe(gulpif('*.png', gulp.dest('./dist/img/'), gulp.dest('./stylesheets/vendor/')))
+});
+
+
+
+//
+// clean /public
+//
+
+gulp.task('clean:public', function () {
+	return del([
+		'./public'
+	]);
 });
 
 

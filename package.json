@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "Gregory Taylor's personal site",
   "scripts": {
-    "test": "test"
+    "dev": "gulp clean:public && gulp --env=dev styles templates && gulp --env=dev watch"
   },
   "repository": {
     "type": "git",
