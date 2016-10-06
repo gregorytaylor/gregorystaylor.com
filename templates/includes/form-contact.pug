@@ -1,0 +1,14 @@
+form#formContact
+	.form-group
+		label(for='inputName') Name
+		input.form-control#inputName(type='text' placeholder='Name' name='inputName' required)
+	.form-group
+		label(for='inputEmail') Email
+		input.form-control#inputEmail(type='email' placeholder='Email' name='inputEmail' required)
+	.form-group
+		label(for='inputPhone') Phone
+		input.form-control#inputPhone(type='tel' placeholder='Phone' name='inputPhone')
+	.form-group
+		label(for='inputOrg') Organization
+		input.form-control#inputOrg(type='text' placeholder='Organization' name='inputOrg')
+	button.btn.btn-outline-primary(type='submit') Send

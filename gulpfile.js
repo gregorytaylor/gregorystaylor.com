@@ -29,11 +29,11 @@ var paths = {
 		dest: './public/css'
 	},
 	templates: {
-		src: './templates/**.pug',
+		src: './templates/**/**.pug',
 		dest: './public'
 	},
 	js: {
-		src: './javascripts/index.js',
+		src: './javascripts/app.js',
 		dest: './public/js'
 	},
 	images: {
@@ -42,7 +42,10 @@ var paths = {
 	},
 	sprite: {
 		src: './images/sprite',
-		dest: './public/img'
+		dest: {
+			img: './public/img',
+			scss: './stylesheets/'
+		}
 	}
 }
 
@@ -59,7 +62,7 @@ gulp.task('styles', function() {
 			outputStyle: 'compressed'
 		}))
 		.pipe(autoprefixer({
-			browsers: ['last 2 versions'],
+			browsers: ['last 3 versions'],
 			cascade: false,
 			remove: false
 		}))
@@ -92,6 +95,17 @@ gulp.task('templates', function() {
 
 
 //
+// js
+//
+
+gulp.task('js', function() {
+	gulp.src(paths.js.src)
+
+		.pipe(gulp.dest(paths.js.dest))
+});
+
+
+//
 // images
 //
 
@@ -121,7 +135,7 @@ gulp.task('sprite', function () {
 	.pipe(imagemin([imageminPngquant({
 		quality: '90-95'
 	})]))
-	.pipe(gulpif('*.png', gulp.dest('./dist/img/'), gulp.dest('./stylesheets/vendor/')))
+	.pipe(gulpif('*.png', gulp.dest(paths.sprite.dest.img), gulp.dest(paths.sprite.dest.scss)))
 });
 
 

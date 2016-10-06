@@ -9,6 +9,16 @@ html {
 	}
 }
 
+.nav-link {
+	text-decoration: none;
+}
+
+.navbar-brand {
+	text-decoration: none;
+}
+
+
+
 //
 // brand styles
 //
@@ -16,6 +26,7 @@ html {
 .brand {
 	font-family: $font-family-brand;
 }
+
 
 
 //
@@ -38,9 +49,10 @@ html {
 
 		.inline-left {
 			margin-right: auto;
+			max-width: 65%;
 
 			em {
-				
+
 			}
 		}
 
@@ -66,6 +78,54 @@ html {
 .media-body {
 	flex: 1;
 }
+
+
+
+//
+// navbar
+//
+
+.navbar {
+	padding: 8px 0;
+	position: fixed;
+	width: 100vw;
+	border-bottom: 1px solid $gray-lighter;
+	background-color: $white;
+}
+
+.navbar-nav {
+	padding: 0 $grid-gutter-width/2;
+	display: none;
+	position: fixed;
+	top: 55px;
+	left: 0;
+	flex-direction: row;
+	justify-content: space-between;
+	width: 100%;
+	border-bottom: 1px solid $gray-lighter;
+	background-color: $white;
+
+	@include media-breakpoint-up(sm) {
+		padding: 0;
+		display: flex;
+		position: relative;
+		top: 0;
+		float: right;
+		width: auto;
+		max-width: 300px;
+		border-bottom: none;
+
+		.nav-item {
+			flex-grow: 1;
+			text-align: center;
+		}
+	}
+}
+
+.navbar-toggler {
+	padding-right: 0;
+}
+
 
 
 //
@@ -95,7 +155,7 @@ section {
 
 		.inline-right {
 			margin-bottom: 4px;
-			display: inline-block;
+			display: inline;
 
 			&:before {
 				content: " ("
@@ -133,3 +193,40 @@ article {
 		text-indent: -2rem;
 	}
 }
+
+
+
+//
+// contact section
+//
+
+.form-group {
+	position: relative;
+
+	label {
+		opacity: 0;
+		position: absolute;
+		top: 2em;
+		left: .75rem;
+		transition: all .05s linear;
+		z-index: -1;
+		background-color: $white;
+		color: #aaa;
+		font-size: .75rem;
+
+		&.show {
+			opacity: 1;
+			top: -.75em;
+			z-index: 1;
+		}
+
+		&.focused {
+			color: $brand-primary;
+		}
+	}
+}
+
+
+
+
+
