@@ -19,7 +19,7 @@ $('.nav-link').filter(function(){
 $(function () {
   var showClass = 'show';
   
-  $('#formContact input').on('checkval', function () {
+  $('#formContact .form-control').on('checkval', function () {
     var label = $(this).prev('label');
     if(this.value !== '') {
       label.addClass(showClass);

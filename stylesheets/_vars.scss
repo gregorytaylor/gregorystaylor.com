@@ -2,11 +2,24 @@
 // variables
 //
 
+$enable-rounded:        false;
+
+
 //
 // colors
 //
 
 $white:									#fff;
+$black:									#000;
+
+$blue:									#0074d9;
+$navy:									#001f3f; // $brand-primary
+
+$brand-primary:					#001f3f;
+
+
+$input-border-focus:		$brand-primary;
+
 
 //
 // links

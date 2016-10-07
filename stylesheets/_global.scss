@@ -11,6 +11,7 @@ html {
 
 .nav-link {
 	text-decoration: none;
+	font-family: $font-family-base;
 }
 
 .navbar-brand {
@@ -23,10 +24,16 @@ html {
 // brand styles
 //
 
-.brand {
+.navbar-brand.brand {
 	font-family: $font-family-brand;
+	color: $brand-primary;
 }
 
+// p,
+// span,
+// li {
+// 	font-family: $font-family-serif;
+// }
 
 
 //
@@ -45,7 +52,6 @@ html {
 
 	@include media-breakpoint-up(md) {
 		display: flex;
-		justify-content: flex-end;
 
 		.inline-left {
 			margin-right: auto;
@@ -87,7 +93,6 @@ html {
 
 .navbar {
 	padding: 8px 0;
-	position: fixed;
 	width: 100vw;
 	border-bottom: 1px solid $gray-lighter;
 	background-color: $white;
@@ -112,7 +117,7 @@ html {
 		top: 0;
 		float: right;
 		width: auto;
-		max-width: 300px;
+		max-width: 320px;
 		border-bottom: none;
 
 		.nav-item {
@@ -135,9 +140,30 @@ html {
 section {
 	padding: 1.5rem 0;
 
-	h1,
-	h3 {
+	h1 {
 		margin-bottom: 1rem;
+	}
+}
+
+
+
+//
+// contact section
+//
+
+
+
+//
+// experience section
+//
+
+#experience {
+	margin-top: 3rem;
+
+	.inline-left {
+		em {
+			display: block;
+		}
 	}
 }
 
@@ -148,14 +174,19 @@ section {
 //
 
 #awards {
+
+	strong {
+		display: block;
+	}
+
 	@include media-breakpoint-down(sm) {
 		.inline-left {
 			display: inline;
 		}
 
 		.inline-right {
-			margin-bottom: 4px;
 			display: inline;
+			font-style: normal;
 
 			&:before {
 				content: " ("
@@ -208,7 +239,7 @@ article {
 		position: absolute;
 		top: 2em;
 		left: .75rem;
-		transition: all .05s linear;
+		transition: all .07s linear;
 		z-index: -1;
 		background-color: $white;
 		color: #aaa;
@@ -221,7 +252,15 @@ article {
 		}
 
 		&.focused {
-			color: $brand-primary;
+			color: $input-border-focus;
+		}
+	}
+}
+
+#formContact {
+	@include media-breakpoint-down(xs) {
+		button[type='submit'] {
+			width: 100%;
 		}
 	}
 }
