@@ -1,0 +1,14 @@
+//
+// brand
+//
+
+.brand {
+	font-family: $font-family-brand;
+	color: $brand-primary;
+}
+
+a.brand {
+	font-size: 1.25rem;
+	display: inline-block;
+	text-decoration: none;
+}

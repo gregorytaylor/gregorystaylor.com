@@ -6,6 +6,13 @@ var gulp = require('gulp');
 var gutil = require('gulp-util');
 var watch = require('gulp-watch');
 var sourcemaps = require('gulp-sourcemaps');
+var browserify = require('browserify');
+var source = require('vinyl-source-stream');
+var buffer = require('vinyl-buffer');
+var es = require('event-stream');
+var rename = require('gulp-rename');
+var stripDebug = require('gulp-strip-debug');
+var uglify = require('gulp-uglify');
 var sass = require('gulp-sass');
 var autoprefixer = require('gulp-autoprefixer');
 var cleanCss = require('gulp-clean-css');
@@ -16,6 +23,7 @@ var gulpif = require('gulp-if');
 var del = require('del');
 var imagemin = require('gulp-imagemin');
 var imageminPngquant = require('imagemin-pngquant');
+var imageminJpegtran = require('imagemin-jpegtran');
 
 
 
@@ -25,25 +33,28 @@ var imageminPngquant = require('imagemin-pngquant');
 
 var paths = {
 	styles: {
-		src: './stylesheets/**.scss',
-		dest: './public/css'
+		src: './stylesheets/**/*.scss',
+		dest: './docs/css'
 	},
 	templates: {
-		src: './templates/**/**.pug',
-		dest: './public'
+		src: {
+			watch: './templates/**/*.pug',
+			build: './templates/*.pug'
+		},
+		dest: './docs'
 	},
 	js: {
 		src: './javascripts/app.js',
-		dest: './public/js'
+		dest: './docs'
 	},
 	images: {
 		src: './images/img',
-		dest: './public/img'
+		dest: './docs/img'
 	},
 	sprite: {
 		src: './images/sprite',
 		dest: {
-			img: './public/img',
+			img: './docs/img',
 			scss: './stylesheets/'
 		}
 	}
@@ -71,8 +82,8 @@ gulp.task('styles', function() {
 			compatibility: 'ie10'
 		}) : gutil.noop())
 		.pipe(gutil.env.env === 'prod' ? purifyCss([
-			'./public/js/index.js',
-			'./public/*.html']) : gutil.noop())
+			'./docs/js/app.js',
+			'./docs/*.html']) : gutil.noop())
 		.pipe(gulp.dest(paths.styles.dest))
 });
 
@@ -83,7 +94,7 @@ gulp.task('styles', function() {
 //
 
 gulp.task('templates', function() {
-	gulp.src(paths.templates.src)
+	gulp.src(paths.templates.src.build)
 		.pipe(plumber())
 		.pipe(pug({
 			pretty: '\t'
@@ -99,9 +110,26 @@ gulp.task('templates', function() {
 //
 
 gulp.task('js', function() {
-	gulp.src(paths.js.src)
-
-		.pipe(gulp.dest(paths.js.dest))
+    // Entry points
+    var files = [
+        './javascripts/app.js'
+    ];
+    // Create a stream array
+    var tasks = files.map(function(entry) {
+        return browserify({ entries: [entry], debug: true})
+            .bundle()
+            .pipe(source(entry))
+		    .pipe(buffer())
+		    .pipe(gutil.env.env === 'dev' ? sourcemaps.init({loadMaps: true}) : gutil.noop())
+            .pipe(rename({
+            	dirname: 'js'
+            }))
+            .pipe(gutil.env.env === 'prod' ? stripDebug() : gutil.noop())
+            .pipe(gutil.env.env === 'prod' ? uglify() : gutil.noop())
+            .pipe(gutil.env.env === 'dev' ? sourcemaps.write('/map') : gutil.noop())
+            .pipe(gulp.dest(paths.js.dest)); 
+        });
+    return es.merge.apply(null, tasks);
 });
 
 
@@ -111,7 +139,9 @@ gulp.task('js', function() {
 
 gulp.task('images', function() {
 	return gulp.src(paths.images.src)
-		.pipe(imagemin())
+		.pipe(imagemin([imageminJpegtran({
+			progressive: true
+		})]))
 		.pipe(gulp.dest(paths.images.dest));
 });
 
@@ -141,12 +171,12 @@ gulp.task('sprite', function () {
 
 
 //
-// clean /public
+// clean /docs
 //
 
-gulp.task('clean:public', function () {
+gulp.task('clean:docs', function () {
 	return del([
-		'./public'
+		'./docs'
 	]);
 });
 
@@ -158,5 +188,5 @@ gulp.task('clean:public', function () {
 
 gulp.task('watch', function() {
 	gulp.watch(paths.styles.src, ['styles']);
-	gulp.watch(paths.templates.src, ['templates']);
+	gulp.watch(paths.templates.src.watch, ['templates']);
 });

@@ -1,13 +1,12 @@
-nav.navbar.navbar-light.navbar-fixed-top
+nav#topNav.top-nav
 	.container
-		a.navbar-brand.brand(href='index.html') Gregory S. Taylor
-		button.navbar-toggler.hidden-sm-up.pull-xs-right(type='button' aria-label='Toggle navigation') &#9776;
-		ul.nav.navbar-nav
-			li.nav-item
-				a.nav-link(href='consulting.html') Consulting
-			li.nav-item
-				a.nav-link(href='contact.html') Contact
-			li.nav-item
-				a.nav-link(href='cv.html') CV
-			li.nav-item.hidden-md-up
-				a.nav-link(href='tel:') Call
+		a.brand(href='index.html') Gregory S. Taylor
+		button.navbar-toggler.hidden-sm-up(type='button' aria-label='Toggle navigation') &#9776;
+		.navbar-nav
+			a(href='#consulting') Consulting
+			a(href='#contact') Contact
+				.caret-wrapper
+					.caret-up
+			a(href='cv.html') CV
+				.caret-wrapper
+					.caret-up

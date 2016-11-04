@@ -11,7 +11,13 @@ app.use((req, res, next) => {
 	next();
 })
 
-app.use(gzipStatic('./public', {
+// app.use(express.static('./dist/', {
+// 	setHeaders: (res, path, stat) => {
+
+// 	}
+// }));
+
+app.use(gzipStatic('./docs', {
 	setHeaders: (res, path, stat) => {
 	}
 }));

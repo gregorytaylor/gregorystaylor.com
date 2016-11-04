@@ -1,0 +1,186 @@
+//
+// global styles
+//
+
+html {
+	@include media-breakpoint-up(lg) {
+		font-size: 18px;
+
+	}
+}
+
+body {
+	position: relative;
+}
+
+.container {
+	@include media-breakpoint-up(lg) {
+		max-width: 940px;
+	}
+}
+
+.nav-link {
+	text-decoration: none;
+	font-family: $font-family-base;
+}
+
+
+
+
+//
+// brand styles
+//
+
+.brand {
+	font-family: $font-family-brand;
+	color: $brand-primary;
+}
+
+a.brand {
+	font-size: 1.25rem;
+	display: inline-block;
+	text-decoration: none;
+}
+
+// p,
+// span,
+// li {
+// 	font-family: $font-family-serif;
+// }
+
+
+//
+// alignment helpers
+//
+
+.split-text {
+
+	.inline-left,
+	.inline-right {
+		display: block;
+	}
+
+	.inline-right {
+		font-style: italic;
+	}
+
+	@include media-breakpoint-up(md) {
+		display: flex;
+
+		.inline-left {
+			margin-right: auto;
+			max-width: 65%;
+
+			em {
+
+			}
+		}
+
+		.inline-right {
+			font-style: normal;
+		}
+	}
+}
+
+
+
+//
+// sections
+//
+
+#experience,
+#awards,
+#education,
+#research {
+	padding: 1.5rem 0;
+
+	h1 {
+		margin-bottom: 1rem;
+	}
+
+	article {
+		margin: 0 auto 1.5rem;
+
+		p {
+			margin-bottom: 4px;
+		}
+	}
+
+	p {
+		margin-bottom: 1.5rem;
+	}
+
+	.text-body {
+		color: $gray-light;
+		font-weight: 300;
+	}
+}
+
+
+
+//
+// experience section
+//
+
+#experience {
+	margin-top: 5rem;
+
+	.inline-left {
+		em {
+			display: block;
+		}
+	}
+}
+
+
+
+//
+// awards section
+//
+
+#awards {
+
+	article {
+		margin-bottom: .5rem;
+	}
+
+	strong {
+		display: block;
+	}
+
+	@include media-breakpoint-down(sm) {
+
+		.inline-left {
+			display: inline;
+		}
+
+		.inline-right {
+			display: inline;
+			font-style: normal;
+
+			&:before {
+				content: " ("
+			}
+			&:after {
+				content: ")"
+			}
+		}
+	}
+}
+
+
+//
+// research section
+//
+
+#research {
+	p {
+		padding-left: 2rem;
+		text-indent: -2rem;
+	}
+}
+
+
+
+
+

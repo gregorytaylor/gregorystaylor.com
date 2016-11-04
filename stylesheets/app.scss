@@ -2,11 +2,30 @@
 // main stylesheet
 //
 
-// project variables
-@import 'vars';
+//
+// vendor dependencies
+//
 
 // bootstrap 4 with flexbox enabled
 @import 'node_modules/bootstrap/scss/bootstrap-flex.scss';
 
+
+
+//
+// project styles
+//
+
+// project variables and utilities
+@import 'utils/module';
+
 // global styles
-@import 'global';
+@import 'global/module';
+
+// themes
+@import 'themes/module';
+
+// layout
+@import 'layout/module';
+
+// components
+@import 'components/module';

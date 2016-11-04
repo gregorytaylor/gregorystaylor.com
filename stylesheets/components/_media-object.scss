@@ -1,0 +1,16 @@
+//
+// media object
+//
+
+.media {
+	display: flex;
+	align-items: flex-start;
+}
+
+.media-figure {
+	margin-right: 1rem;
+}
+
+.media-body {
+	flex: 1;
+}

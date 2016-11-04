@@ -12,10 +12,16 @@ $enable-rounded:        false;
 $white:									#fff;
 $black:									#000;
 
+$gray-dark:							lighten($black,20%);
+
+$gray-light:						lighten($black,40%);
+$gray-lighter:					lighten($black,80%);
+$gray-lightest:					lighten($black,97%);
+
 $blue:									#0074d9;
 $navy:									#001f3f; // $brand-primary
 
-$brand-primary:					#001f3f;
+$brand-primary:					#08327d;
 
 
 $input-border-focus:		$brand-primary;

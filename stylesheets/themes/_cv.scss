@@ -1,0 +1,100 @@
+//
+// cv theme
+//
+
+
+//
+// sections
+//
+
+#experience,
+#awards,
+#education,
+#research {
+	padding: 1.5rem 0;
+
+	h1 {
+		margin-bottom: 1rem;
+	}
+
+	article {
+		margin: 0 auto 1.5rem;
+
+		p {
+			margin-bottom: 4px;
+		}
+	}
+
+	p {
+		margin-bottom: 1.5rem;
+	}
+
+	.text-body {
+		color: $gray-light;
+		font-weight: 300;
+	}
+}
+
+
+
+//
+// experience section
+//
+
+#experience {
+	margin-top: 5rem;
+
+	.inline-left {
+		em {
+			display: block;
+		}
+	}
+}
+
+
+
+//
+// awards section
+//
+
+#awards {
+
+	article {
+		margin-bottom: .5rem;
+	}
+
+	strong {
+		display: block;
+	}
+
+	@include media-breakpoint-down(sm) {
+
+		.inline-left {
+			display: inline;
+		}
+
+		.inline-right {
+			display: inline;
+			font-style: normal;
+
+			&:before {
+				content: " ("
+			}
+			&:after {
+				content: ")"
+			}
+		}
+	}
+}
+
+
+//
+// research section
+//
+
+#research {
+	p {
+		padding-left: 2rem;
+		text-indent: -2rem;
+	}
+}

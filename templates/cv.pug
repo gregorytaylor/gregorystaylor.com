@@ -3,59 +3,12 @@ html(lang="en")
 	include includes/head.pug
 	body
 		include includes/topNav.pug
+		nav.page-nav#cvNav
+			a(href='#experience') Experience
+			a(href='#education') Education
+			a(href='#research') Research
 		section#experience
-			.container
-				h1 Experience
-				article
-					h4 Associate Director
-					.split-text
-						p.inline-left Office of Assessment, Accountability & Research 
-							em Dayton Public Schools
-						p.inline-right June 2016 - Present
-				article
-					h4 Special Education Advisor
-					.split-text
-						p.inline-left National Science Teachers Association
-						p.inline-right June 2016 - May 2019
-				article
-					h4 Education Consultant
-					.split-text
-						p.inline-left Remote
-						p.inline-right June 2014 - Present
-					span Previous clients:
-					ul.client-list
-						li U.S. Department of Education
-						li Boston Public Schools
-						li Massachusetts Department of Education
-						li Houston Unified School District
-						li San Diego Unified School District
-						li Museum of Science, Boston
-						li College Board
-						li ACT
-						li Pearson Education
-						li McGraw Hill Education
-				article
-					h4 Testing Coordinator
-					.split-text
-						p.inline-left Thurgood Marshall STEM High School
-							em Dayton Public Schools
-						p.inline-right August 2015 - May 2016
-				article
-					h4 Intervention Science Teacher
-					.split-text
-						p.inline-left Thurgood Marshall STEM High School
-							em Dayton Public Schools
-						p.inline-right August 2015 - May 2016
-				article
-					h4 Accessibility and Curriculum Consultant
-					.split-text
-						p.inline-left Center for Science and Industry (COSI)
-						p.inline-right May 2014 - April 2015
-				article
-					h4 Researcher
-					.split-text
-						p.inline-left University of Cincinnati
-						p.inline-right January 2013 - April 2014
+			include includes/experience.pug
 		section#awards
 			.container
 				h1 Awards
@@ -83,7 +36,6 @@ html(lang="en")
 							strong University of Cincinnati
 							span Sarah Moses Scholarship
 						span.inline-right 2012
-
 		section#education
 			.container
 				h1 Education
