@@ -33,7 +33,10 @@ var imageminJpegtran = require('imagemin-jpegtran');
 
 var paths = {
 	styles: {
-		src: './stylesheets/**/*.scss',
+		src: {
+			watch: './stylesheets/**/*.scss',
+			build: './stylesheets/app.scss'
+		},
 		dest: './docs/css'
 	},
 	templates: {
@@ -57,6 +60,10 @@ var paths = {
 			img: './docs/img',
 			scss: './stylesheets/'
 		}
+	},
+	fonts: {
+		src: './fonts/**.*',
+		dest: './docs/css/fonts'
 	}
 }
 
@@ -67,7 +74,7 @@ var paths = {
 //
 
 gulp.task('styles', function() {
-	return gulp.src(paths.styles.src)
+	return gulp.src(paths.styles.src.build)
 		.pipe(gutil.env.env === 'dev' ? sourcemaps.init() : gutil.noop())
 		.pipe(sass({
 			outputStyle: 'compressed'
@@ -169,6 +176,17 @@ gulp.task('sprite', function () {
 });
 
 
+//
+// images
+//
+
+gulp.task('fonts', function() {
+	return gulp.src(paths.fonts.src)
+
+		.pipe(gulp.dest(paths.fonts.dest));
+});
+
+
 
 //
 // clean /docs
@@ -187,6 +205,6 @@ gulp.task('clean:docs', function () {
 //
 
 gulp.task('watch', function() {
-	gulp.watch(paths.styles.src, ['styles']);
+	gulp.watch(paths.styles.src.watch, ['styles']);
 	gulp.watch(paths.templates.src.watch, ['templates']);
 });

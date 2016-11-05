@@ -3,8 +3,8 @@
   "version": "1.0.0",
   "description": "Gregory Taylor's personal site",
   "scripts": {
-    "dev": "gulp clean:docs && gulp --env=dev styles templates js && gulp --env=dev watch",
-    "prod": "gulp clean:docs && gulp --env=prod styles templates js"
+    "dev": "gulp clean:docs && gulp --env=dev styles templates js fonts && gulp --env=dev watch",
+    "prod": "gulp clean:docs && gulp --env=prod styles templates js fonts"
   },
   "repository": {
     "type": "git",

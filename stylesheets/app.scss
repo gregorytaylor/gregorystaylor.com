@@ -9,7 +9,11 @@
 // bootstrap 4 with flexbox enabled
 @import 'node_modules/bootstrap/scss/bootstrap-flex.scss';
 
+// downloaded vendor dependencies (smh)
+@import 'vendor/module';
 
+
+$grid-gutter-width: 30px;
 
 //
 // project styles
