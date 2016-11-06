@@ -25,9 +25,15 @@
 		display: flex;
 		justify-content: space-between;
 		align-items: center;
+		float: right;
 
 		a {
+			margin-left: .5rem;
 			color: $brand-primary;
+
+			&:first-child {
+				margin-left: 0;
+			}
 
 			&:hover,
 			&:focus {

@@ -324,6 +324,22 @@ pre {
   height: 100%!important;
 }
 
+.m-0 {
+  margin: 0!important;
+}
+
+.m-1 {
+  margin: 1rem!important;
+}
+
+.m-2 {
+  margin: 1.5rem!important;
+}
+
+.m-3 {
+  margin: 3rem!important;
+}
+
 #awards h1,#education h1,#experience h1,#footer h1,#research h1 {
   margin-bottom: 1rem;
 }
@@ -382,6 +398,10 @@ a.text-primary:focus,a.text-primary:hover {
   line-height: 1;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-envelope-o:before {
+  content: "\f003";
 }
 
 .icon-phone:before {
@@ -463,10 +483,6 @@ a.brand {
   font-weight: 300;
 }
 
-#footer a,.top-nav .social-wrapper a {
-  color: #08327d;
-}
-
 #experience {
   margin-top: 2.5rem;
 }
@@ -532,6 +548,16 @@ a.brand {
   justify-content: space-between;
   -ms-flex-align: center;
   align-items: center;
+  float: right;
+}
+
+.top-nav .social-wrapper a {
+  margin-left: .5rem;
+  color: #08327d;
+}
+
+.top-nav .social-wrapper a:first-child {
+  margin-left: 0;
 }
 
 .top-nav .social-wrapper a:focus,.top-nav .social-wrapper a:hover {
@@ -540,4 +566,8 @@ a.brand {
 
 #footer {
   border-top: 1px solid #f7f7f7;
+}
+
+#footer a {
+  color: #08327d;
 }
