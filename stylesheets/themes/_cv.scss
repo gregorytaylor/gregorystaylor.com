@@ -10,7 +10,8 @@
 #experience,
 #awards,
 #education,
-#research {
+#research,
+#footer {
 	padding: 1.5rem 0;
 
 	h1 {
@@ -96,5 +97,9 @@
 	p {
 		padding-left: 2rem;
 		text-indent: -2rem;
+
+		&:last-child {
+			margin-bottom: 0;
+		}
 	}
 }

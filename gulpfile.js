@@ -17,6 +17,7 @@ var sass = require('gulp-sass');
 var autoprefixer = require('gulp-autoprefixer');
 var cleanCss = require('gulp-clean-css');
 var purifyCss = require('gulp-purifycss');
+var uncss = require('gulp-uncss');
 var plumber = require('gulp-plumber');
 var pug = require('gulp-pug');
 var gulpif = require('gulp-if');
@@ -64,6 +65,10 @@ var paths = {
 	fonts: {
 		src: './fonts/**.*',
 		dest: './docs/css/fonts'
+	},
+	favicon: {
+		src: './favicon.ico',
+		dest: './docs'
 	}
 }
 
@@ -88,6 +93,9 @@ gulp.task('styles', function() {
 		.pipe(gutil.env.env === 'prod' ? cleanCss({
 			compatibility: 'ie10'
 		}) : gutil.noop())
+		// .pipe(gutil.env.env === 'prod' ? uncss({
+  //           html: ['./docs/*.html']
+  //       }) : gutil.noop())
 		.pipe(gutil.env.env === 'prod' ? purifyCss([
 			'./docs/js/app.js',
 			'./docs/*.html']) : gutil.noop())
@@ -104,7 +112,7 @@ gulp.task('templates', function() {
 	gulp.src(paths.templates.src.build)
 		.pipe(plumber())
 		.pipe(pug({
-			pretty: '\t'
+			pretty: false
 		}))
 		.pipe(plumber.stop())
 		.pipe(gulp.dest(paths.templates.dest))
@@ -116,28 +124,28 @@ gulp.task('templates', function() {
 // js
 //
 
-gulp.task('js', function() {
-    // Entry points
-    var files = [
-        './javascripts/app.js'
-    ];
-    // Create a stream array
-    var tasks = files.map(function(entry) {
-        return browserify({ entries: [entry], debug: true})
-            .bundle()
-            .pipe(source(entry))
-		    .pipe(buffer())
-		    .pipe(gutil.env.env === 'dev' ? sourcemaps.init({loadMaps: true}) : gutil.noop())
-            .pipe(rename({
-            	dirname: 'js'
-            }))
-            .pipe(gutil.env.env === 'prod' ? stripDebug() : gutil.noop())
-            .pipe(gutil.env.env === 'prod' ? uglify() : gutil.noop())
-            .pipe(gutil.env.env === 'dev' ? sourcemaps.write('/map') : gutil.noop())
-            .pipe(gulp.dest(paths.js.dest)); 
-        });
-    return es.merge.apply(null, tasks);
-});
+// gulp.task('js', function() {
+//     // Entry points
+//     var files = [
+//         './javascripts/app.js'
+//     ];
+//     // Create a stream array
+//     var tasks = files.map(function(entry) {
+//         return browserify({ entries: [entry], debug: true})
+//             .bundle()
+//             .pipe(source(entry))
+// 		    .pipe(buffer())
+// 		    .pipe(gutil.env.env === 'dev' ? sourcemaps.init({loadMaps: true}) : gutil.noop())
+//             .pipe(rename({
+//             	dirname: 'js'
+//             }))
+//             .pipe(gutil.env.env === 'prod' ? stripDebug() : gutil.noop())
+//             .pipe(gutil.env.env === 'prod' ? uglify() : gutil.noop())
+//             .pipe(gutil.env.env === 'dev' ? sourcemaps.write('/map') : gutil.noop())
+//             .pipe(gulp.dest(paths.js.dest)); 
+//         });
+//     return es.merge.apply(null, tasks);
+// });
 
 
 //
@@ -176,14 +184,27 @@ gulp.task('sprite', function () {
 });
 
 
+
 //
-// images
+// fonts
 //
 
 gulp.task('fonts', function() {
 	return gulp.src(paths.fonts.src)
 
 		.pipe(gulp.dest(paths.fonts.dest));
+});
+
+
+
+//
+// favicon
+//
+
+gulp.task('favicon', function() {
+	return gulp.src(paths.favicon.src)
+
+		.pipe(gulp.dest(paths.favicon.dest));
 });
 
 

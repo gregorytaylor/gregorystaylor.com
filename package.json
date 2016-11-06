@@ -3,8 +3,8 @@
   "version": "1.0.0",
   "description": "Gregory Taylor's personal site",
   "scripts": {
-    "dev": "gulp clean:docs && gulp --env=dev styles templates js fonts && gulp --env=dev watch",
-    "prod": "gulp clean:docs && gulp --env=prod styles templates js fonts"
+    "dev": "gulp clean:docs && gulp --env=dev styles templates fonts favicon && gulp --env=dev watch",
+    "prod": "gulp clean:docs && gulp --env=prod templates favicon && gulp --env=prod styles fonts"
   },
   "repository": {
     "type": "git",
@@ -35,6 +35,7 @@
     "gulp-sourcemaps": "^1.6.0",
     "gulp-strip-debug": "^1.1.0",
     "gulp-uglify": "^2.0.0",
+    "gulp-uncss": "^1.0.6",
     "gulp-util": "^3.0.7",
     "gulp-watch": "^4.3.10",
     "imagemin-jpegtran": "^5.0.2",
