@@ -3,8 +3,8 @@
   "version": "1.0.0",
   "description": "Gregory Taylor's personal site",
   "scripts": {
-    "dev": "gulp clean:docs && gulp --env=dev styles templates fonts favicon && gulp --env=dev watch",
-    "prod": "gulp clean:docs && gulp --env=prod templates favicon && gulp --env=prod styles fonts"
+    "dev": "gulp clean:docs && gulp --env=dev styles templates fonts favicon cname && gulp --env=dev watch",
+    "prod": "gulp clean:docs && gulp --env=prod templates favicon cname && gulp --env=prod styles fonts"
   },
   "repository": {
     "type": "git",

@@ -69,6 +69,10 @@ var paths = {
 	favicon: {
 		src: './favicon.ico',
 		dest: './docs'
+	},
+	cname: {
+		src: './CNAME',
+		dest: './docs'
 	}
 }
 
@@ -205,6 +209,18 @@ gulp.task('favicon', function() {
 	return gulp.src(paths.favicon.src)
 
 		.pipe(gulp.dest(paths.favicon.dest));
+});
+
+
+
+//
+// cname
+//
+
+gulp.task('cname', function() {
+	return gulp.src(paths.cname.src)
+
+		.pipe(gulp.dest(paths.cname.dest));
 });
 
 
