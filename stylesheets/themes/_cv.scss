@@ -8,6 +8,8 @@
 //
 
 #experience,
+#activities,
+#membership,
 #awards,
 #education,
 #research,
@@ -39,6 +41,37 @@
 
 
 //
+// activities section
+//
+
+#activities {
+
+	article {
+		margin-bottom: .5rem;
+	}
+
+	@include media-breakpoint-down(xs) {
+		em {
+			display: block;
+			font-style: normal;
+		}
+	}
+
+	@include media-breakpoint-up(sm) {
+		em {
+			display: inline;
+
+			&:before {
+				content: ", ";
+			}
+		}
+	}
+
+}
+
+
+
+//
 // experience section
 //
 
@@ -49,6 +82,18 @@
 		em {
 			display: block;
 		}
+	}
+}
+
+
+
+//
+// membership section
+//
+
+#membership {
+	p {
+		margin-bottom: 4px;
 	}
 }
 

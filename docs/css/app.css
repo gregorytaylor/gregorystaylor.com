@@ -340,15 +340,15 @@ pre {
   margin: 3rem!important;
 }
 
-#awards h1,#education h1,#experience h1,#footer h1,#research h1 {
+#activities h1,#awards h1,#education h1,#experience h1,#footer h1,#membership h1,#research h1 {
   margin-bottom: 1rem;
 }
 
-#awards article p,#education article p,#experience article p,#footer article p,#research article p {
+#activities article p,#awards article p,#education article p,#experience article p,#footer article p,#membership article p,#research article p {
   margin-bottom: 4px;
 }
 
-#awards p,#education p,#experience p,#footer p,#research p {
+#activities p,#awards p,#education p,#experience p,#footer p,#membership p,#research p {
   margin-bottom: 1.5rem;
 }
 
@@ -368,7 +368,7 @@ pre {
   padding: 3rem!important;
 }
 
-#awards,#education,#experience,#footer,#research {
+#activities,#awards,#education,#experience,#footer,#membership,#research {
   padding: 1.5rem 0;
 }
 
@@ -459,7 +459,7 @@ body {
   }
 }
 
-#awards article,#education article,#experience article,#footer article,#research article {
+#activities article,#awards article,#education article,#experience article,#footer article,#membership article,#research article {
   margin: 0 auto 1.5rem;
 }
 
@@ -478,17 +478,38 @@ a.brand {
   display: block;
 }
 
-#awards .text-body,#education .text-body,#experience .text-body,#footer .text-body,#research .text-body {
+#activities article,#awards article {
+  margin-bottom: .5rem;
+}
+
+#activities .text-body,#awards .text-body,#education .text-body,#experience .text-body,#footer .text-body,#membership .text-body,#research .text-body {
   color: #666;
   font-weight: 300;
+}
+
+@media (max-width:575px) {
+  #activities em {
+    display: block;
+    font-style: normal;
+  }
+}
+
+@media (min-width:576px) {
+  #activities em {
+    display: inline;
+  }
+
+  #activities em:before {
+    content: ", ";
+  }
 }
 
 #experience {
   margin-top: 2.5rem;
 }
 
-#awards article {
-  margin-bottom: .5rem;
+#membership p {
+  margin-bottom: 4px;
 }
 
 @media (max-width:767px) {
